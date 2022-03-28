@@ -20,7 +20,11 @@ navToggle.addEventListener("click", function() {
     links.style.display = "block";
 });
 
-
+var swiper = new Swiper(".shirt-swiper", {
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    loop: true,
+});
 
 
 //---------SCROLL REVEAL//

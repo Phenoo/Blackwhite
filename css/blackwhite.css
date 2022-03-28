@@ -7,7 +7,7 @@
     --livvic: "Livvic";
     --bestrock: "Best Rock";
     --gothic: "Franklin Gothic";
-    --transit: .4s linear all;
+    --transit: 0.3s linear all;
     --butradius: 30px;
     --pad1: 1rem;
     --border: 2px solid #000;
@@ -165,14 +165,14 @@ nav button {
 .elegance .second-btn {
     display: block;
     font-size: var(--rem2);
-    margin-top: 4em;
+    margin-top: var(--rem2);
     text-align: center;
     transform: translateX(175%);
 }
 
-.elegance-part1 img {
+.container1 img {
     width: 100%;
-    height: 70%;
+    height: 500px;
 }
 
 .social-links ul {
@@ -219,9 +219,11 @@ nav button {
 
 .container3 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /*   grid-template-columns: repeat(3, 1fr);
     gap: 1.5em;
-    margin-bottom: var(--rem4);
+    margin-bottom: var(--rem4); */
+    place-items: center;
+    margin-bottom: var(--rem2);
 }
 
 .container3 img {
@@ -237,27 +239,129 @@ nav button {
 
 .shirtcard {
     background-color: rgb(202, 202, 202);
-    border: var(--border);
-    padding: var(--pad1);
+    width: 300px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.shirtcard img {
+.shirtcard-img {
+    height: 450px;
+    position: relative;
+}
+
+.shirtcard-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shirtcard-img .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
-    transform: translateX(15%);
+    justify-content: center;
     align-items: center;
-    width: 80%;
-    height: 400px;
-    margin-bottom: 2em;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(233, 232, 225);
+    z-index: 10;
+    opacity: 0.8;
 }
 
-.shirtcard div {
+.buy-btn {
+    width: 160px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    border-radius: var(--butradius);
+    letter-spacing: 1px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.buy-btn:hover,
+.main-btn:hover {
+    background-color: #fff;
+    color: #000;
+    border: var(--border);
+    transition: all ease 0.3s
+}
+
+.shirtcard-img .overlay {
+    visibility: hidden;
+}
+
+.shirtcard-img:hover .overlay {
+    visibility: visible;
+    animation: fade 0.5s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
+.shirtcard-text {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    font-size: 1.5rem;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
 }
 
-.shirtcard p {
+.shirtcard-text .type {
+    display: flex;
+    flex-direction: column;
+}
+
+.shirtcard-text .type a {
+    margin: 5px 0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding-right: 8px;
+}
+
+.shirtcard-text .type span {
+    font-size: 0.65rem;
+}
+
+.shirtcard-text .price {
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
     margin: 0;
+}
+
+.more-link {
+    text-transform: uppercase;
+    color: black;
+    font-size: 1.1rem;
+    text-align: right;
+    width: 100%;
+    margin-top: var(--rem2);
+}
+
+.more-link:hover {
+    text-decoration: underline;
+    font-weight: 700;
 }
 
 .container4 {
@@ -277,6 +381,11 @@ nav button {
 
 .feature-card img {
     border: none;
+}
+
+.feature-card:hover {
+    opacity: 0.7;
+    transition: opacity 0.7;
 }
 
 .feature-card button {
@@ -342,8 +451,8 @@ nav button {
     padding: .5em 0 .5em;
     background-color: var(--black);
     color: var(--white);
-    margin: 2em -3em 2em;
     z-index: 2;
+    width: 100%;
 }
 
 .marker ul {
