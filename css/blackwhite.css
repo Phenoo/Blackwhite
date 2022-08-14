@@ -22,6 +22,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -29,6 +30,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: var(--poppins);
+    overflow-x: hidden;
 }
 
 h1,
@@ -156,8 +158,7 @@ nav button {
 }
 
 .elegance p {
-    font: var(--rem4) var(--poppins);
-    max-width: 400px;
+    font: var(--rem3) var(--poppins);
     font-weight: 700;
     line-height: 1;
 }
@@ -219,9 +220,6 @@ nav button {
 
 .container3 {
     display: grid;
-    /*   grid-template-columns: repeat(3, 1fr);
-    gap: 1.5em;
-    margin-bottom: var(--rem4); */
     place-items: center;
     margin-bottom: var(--rem2);
 }
@@ -468,18 +466,16 @@ nav button {
 .container6 section img {
     margin-top: 2em;
     width: 100%;
-    height: 80vh;
     z-index: -10;
 }
 
 .container7 {
     margin: 1em 0 1em;
-    height: 520px;
+    height: 100%;
 }
 
 .getintouch {
     padding-top: 6em;
-    max-width: 420px;
 }
 
 .getintouch p {
@@ -498,9 +494,12 @@ input::placeholder {
     font-size: 1.5em;
 }
 
+.getintouch-img {
+    height: 100%;
+}
+
 .getintouch-img img {
-    width: 85%;
-    height: 70%;
+    height: 400px;
 }
 
 footer ul {
@@ -521,6 +520,10 @@ footer ul {
     opacity: 0.5;
 }
 
+.footer .logo {
+    margin: 0;
+}
+
 footer li {
     padding-bottom: 1em;
 }
@@ -533,7 +536,8 @@ footer li:hover {
 .foot {
     display: grid;
     grid-template-columns: 30% 70%;
-    padding: 2em;
+    width: 85%;
+    margin: 0 auto;
 }
 
 .footer2 {
@@ -573,7 +577,14 @@ footer li:hover {
 
 /**/
 
-@media screen and (max-width:800px) {
+@media screen and (max-width: 64em) {
+    p,
+    a {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width:50em) {
     .nav-header {
         display: flex;
         justify-content: space-between;
@@ -581,10 +592,15 @@ footer li:hover {
     .nav-btn {
         display: flex;
         align-items: center;
+        z-index: 100;
     }
     .nav-btn button {
         font-size: 1.2rem;
         padding-right: 0.7rem;
+        z-index: 100;
+    }
+    .nav-toggle {
+        color: #808080;
     }
     .nav-cart {
         display: none;
@@ -602,7 +618,7 @@ footer li:hover {
         color: var(--white);
         text-transform: uppercase;
         transition: var(--transit);
-        margin: var(--rem2);
+        margin: 0;
         padding: var(--rem1);
     }
     .links a:hover {
@@ -611,7 +627,17 @@ footer li:hover {
         padding-left: var(--rem2);
     }
     .show-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
         height: 100vh;
+        z-index: 10;
+        padding: 1rem;
+        touch-action: none;
+    }
+    .show-links li {
+        margin-top: 2rem;
     }
     .container1,
     .container2,
@@ -625,6 +651,11 @@ footer li:hover {
         display: grid;
         grid-template-columns: 100%;
         gap: .5rem;
+        margin: 0 auto;
+        width: 95%;
+    }
+    .elegance p {
+        font-size: 2.5rem;
     }
     .elegance .main-btn {
         margin-bottom: 3em;
@@ -632,13 +663,11 @@ footer li:hover {
     .elegance .second-btn {
         display: none;
     }
+    .tophead {
+        font-size: 2rem;
+    }
     .feature-card.number2 img {
         width: fit-content;
-    }
-    .container4 .tophead,
-    .container5 .tophead {
-        line-height: 1.2;
-        font-size: 2rem;
     }
     .container4 p {
         max-width: 100%;
@@ -651,5 +680,64 @@ footer li:hover {
     }
     .container7 {
         height: 780px;
+    }
+}
+
+@media screen and (max-width: 40em) {
+    .elegance p {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 0.7rem;
+    }
+    .tophead {
+        font-size: 1.5rem;
+    }
+    .container {
+        margin: 0 auto;
+        width: 95%;
+    }
+    .newin2 a {
+        font-size: 0.7rem;
+    }
+    .container4 p {
+        font-size: 0.7rem;
+    }
+    .feature-card button {
+        font-size: 1.5rem;
+    }
+    .container5 .tophead {
+        font-size: 1.1rem;
+    }
+    .main-btn {
+        padding: 0.5rem 0;
+    }
+    .marker ul {
+        list-style: none;
+        overflow: hidden;
+        padding: 0;
+        font-size: 0.6rem;
+    }
+    .getintouch p {
+        font-size: 0.7rem;
+    }
+    input {
+        font-size: 0.75;
+    }
+    input::placeholder {
+        font-size: 0.75rem;
+    }
+    footer a {
+        font-size: 0.85rem;
+    }
+    .foot {
+        margin: 0 auto;
+        width: 95%;
+    }
+    .more-link {
+        font-size: 0.7rem;
+    }
+    .container4 {
+        margin: 2rem 0;
     }
 }
