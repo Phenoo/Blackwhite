@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Livvic&family=Montserrat&family=Poppins&family=Roboto&display=swap');
 :root {
     --black: #000;
     --blacktone: rgb(19, 19, 19);
@@ -6,8 +6,8 @@
     --white: #fff;
     --poppins: "Poppins";
     --livvic: "Livvic";
-    --bestrock: "Best Rock";
-    --gothic: "Franklin Gothic";
+    --bestrock: "Roboto";
+    --gothic: "Montserrat";
     --transit: 0.3s linear all;
     --butradius: 30px;
     --pad1: 1rem;
